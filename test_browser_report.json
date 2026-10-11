@@ -1,9 +1,9 @@
 {
   "version": "1.5",
-  "testedAt": "2026-10-11T01:27:06.206Z",
+  "testedAt": "2026-10-11T01:46:41.830Z",
   "browser": "154.0.8037.99",
   "executable": "Google Chrome",
-  "appSha256": "14a66e55fe093d37f794e86e063ac5a366bc6ad46480da4f127ebc8d30187877",
+  "appSha256": "5a0630fbc2d199d46b3ac60fc24eb4b989e7521d87e4d6beff6b1b9353b4324a",
   "method": "Direct file:// navigation of complete standalone HTML",
   "checksPassed": 130,
   "testedLayouts": {

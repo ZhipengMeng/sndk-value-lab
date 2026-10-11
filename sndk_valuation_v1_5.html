@@ -1,5 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SNDK Value Lab v1.5 — prices, costs, contracts, intrinsic valuation</title><style>
+<title>SNDK Value Lab v1.5 — prices, costs, contracts, intrinsic valuation</title>
+<meta name="description" content="Explore Sandisk valuation scenarios with editable assumptions, a guidance-based working preset, source references, and an October 9, 2026 data snapshot. Research and education; no live market data.">
+<meta name="referrer" content="strict-origin-when-cross-origin"><style>
     :root { --bg:#0b1420;--paper:#111f2e;--raised:#172a3b;--stroke:#284052;--text:#f1f5f7;--muted:#aec0c9;--accent:#d1af68;--teal:#74c5b7;--red:#d88f86;--grid-stroke:#324554;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     * {box-sizing:border-box}
     html {scroll-behavior:smooth}
@@ -115,6 +117,7 @@ hr{border:0;height:1px;background:var(--stroke);margin:27px 0}
 <section class="hero"><div class="eyebrow">Guidance-based valuation · October 2026 snapshot · works offline</div>
 <h1>Explore Sandisk's<br><span class="gold">future cash flows.</span></h1>
 <p>Compare company guidance, your assumptions and potential NAND cycles. Every valuation is conditional on the selected inputs.</p>
+<p class="note">Research and education; not personalized investment advice. Financial inputs are frozen as of October 9, 2026. <a href="https://github.com/ZhipengMeng/sndk-value-lab#facts-and-assumptions">Read the methodology and assumptions</a>.</p>
 <div class="notice"><strong>v1.5 adds the guidance-based working valuation.</strong> Start with management's FY2028–30 framework, then slow growth over four years. The FY2027 baseline and long-run profitability are analyst assumptions. Cash allowances and stock-compensation costs remain visible.</div>
 <div class="tagrow"><span class="tag">Reference: Oct 9, 2026 close · $1,581.82</span><span class="tag">Original versions preserved</span><span class="tag">Inputs editable; evidence not invented</span><span class="tag">Financial scenarios ≠ probabilities</span></div></section>
 <section class="panel" id="overview"><div class="section-heading"><h2>Working valuation</h2><span class="tag">Present value per share</span></div>
@@ -204,7 +207,10 @@ hr{border:0;height:1px;background:var(--stroke);margin:27px 0}
 <li><a href="https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm">FY2026 Form 10-K</a> — financial history, capital, manufacturing and commitments.</li>
 <li><a href="https://www.sec.gov/Archives/edgar/data/2023554/000162828026053346/sndk-20260805.htm">2026 8-K repurchase authorization</a> — authorization is discretionary; not evidence of purchases or a cash asset.</li></ol>
 <p class="note">Please see README.md for mathematical definitions, data provenance, test instructions and limitations. No historical P/B or EV/sales values have been invented; none is presented as an independent cross-check.</p></section>
-</main><footer><div class="shell">SNDK Value Lab v1.5 · Offline source included · No guaranteed floor · Scenario analysis rather than forecast probabilities.<br>© Analytical educational model, 2026.</div></footer>
+</main><footer><div class="shell">SNDK Value Lab v1.5 · No guaranteed floor · Scenario analysis rather than forecast probabilities.<br>
+<a href="https://github.com/ZhipengMeng/sndk-value-lab">Source, documentation and verification</a> · <a href="https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v1_5.html" download="sndk_valuation_v1_5.html">Download the offline app</a><br>
+Inputs and imported settings stay in your browser. No analytics or automatic financial-data requests. Website hosting is subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.<br>
+© 2026 sndk-value-lab contributors. All rights reserved. Independent of Sandisk.</div></footer>
 <script>'use strict';
 /*
  * SNDK Value Lab v1.5 — audit-driven, offline scenario engine.

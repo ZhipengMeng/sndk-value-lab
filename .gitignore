@@ -12,3 +12,5 @@ __pycache__/
 *_guidance_export.json
 .github-upload.json
 remote_verification.json
+_site/
+publication_verification.json

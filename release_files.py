@@ -8,7 +8,7 @@ PUBLISH_FILES = [
     'sndk_valuation_v1_5.js', 'sndk_valuation_v1_5.html', 'app_template.html',
     'build_v1_5.py', 'generate_results.js', 'test_engine.js', 'test_browser.js',
     'test_browser.py', 'audit_export.js', 'audit_independent.py', 'run_checks.py',
-    'release_files.py', 'package_release.py', 'verify_release.py',
+    'release_files.py', 'package_release.py', 'verify_release.py', 'prepare_site.py',
     'package.json', 'package-lock.json', 'guidance_preset.json', 'guidance_results.json',
     'legacy_settings.json', 'legacy_results.json', 'v1_4_preservation.json',
     'test_engine_report.json', 'audit_independent_report.json',

@@ -2,7 +2,11 @@
 
 An offline Sandisk valuation calculator with editable NAND scenarios, company-guidance cash reconciliation, and independently checked arithmetic. Financial inputs remain frozen as of **October 9, 2026**; the app does not fetch live prices.
 
-Download this repository and open **[sndk_valuation_v1_5.html](sndk_valuation_v1_5.html)** in a browser. No installation, server, account, or internet connection is required to use the calculator. GitHub displays the HTML source; download it before opening locally. This private repository does not deploy a public website.
+**[Open the live calculator](https://zhipengmeng.github.io/sndk-value-lab/)** · [Source and methodology](https://github.com/ZhipengMeng/sndk-value-lab) · [Download the standalone app](https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v1_5.html)
+
+Use the live calculator without an account, or download **[sndk_valuation_v1_5.html](sndk_valuation_v1_5.html)** and open it locally for offline use. GitHub's repository view displays HTML source; the live-calculator link runs the app. Select a preset, adjust inputs, and use Export settings to save your work. Reloading the page restores the saved default preset.
+
+Calculations and imported settings stay in your browser. The app has no analytics, account system, or automatic financial-data requests. GitHub Pages serves the website under [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). For fully offline use, download the standalone app.
 
 ## Guidance-based working preset
 
@@ -67,8 +71,10 @@ python3 run_checks.py --browser --package
 
 The normal check command builds the HTML, generates reference results, runs 40 engine test groups and 93,188 independent arithmetic checks across 587 cases, and verifies source/HTML consistency. Browser testing adds 130 desktop/mobile checks, including preset selection, input edits, exported/imported sessions, invalid inputs, funding warnings, and offline behavior. Testing establishes implementation consistency, not forecast accuracy. Safari, Firefox and physical mobile devices are not covered by these tests.
 
-The GitHub Actions workflow runs the same checks on pushes and pull requests with read-only repository permissions. It does not deploy the app. Test screenshots, browser exports, dependency folders, and local environment files are excluded from the release.
+The GitHub Actions workflow runs the same checks on pushes and pull requests with read-only repository permissions. After successful checks on `main` in the public `ZhipengMeng/sndk-value-lab` repository, a separate job publishes the tested app to GitHub Pages. Only that job receives Pages deployment permissions. Private-repository runs and pull requests do not deploy. Test screenshots, browser exports, dependency folders, and local environment files are excluded from the release.
+
+`python3 prepare_site.py` creates the website in `_site/` from the tested standalone HTML and checks its saved browser-test checksum. The site contains only the calculator, its downloadable standalone copy, and a `.nojekyll` marker. To configure hosting, select **GitHub Actions** in **Settings → Pages**, then run **Verify and publish valuation model** from the Actions tab. Subsequent pushes to `main` run the checks before publishing an update.
 
 ## Access and rights
 
-Private research software; no open-source license is granted. See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The model is not affiliated with or endorsed by Sandisk. Valuations are research scenarios, not individualized investment instructions.
+Publicly viewable research software; copyright remains reserved and no open-source license is granted. See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The model is not affiliated with or endorsed by Sandisk. Valuations are research scenarios, not individualized investment instructions. Public availability and passing software tests do not establish forecast accuracy.
