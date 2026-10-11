@@ -1,12 +1,30 @@
 {
-  "version": "1.5",
-  "checkedAt": "2026-10-11T01:46:41.941072+00:00",
-  "engineTestGroups": 40,
-  "independentChecks": 93188,
-  "arithmeticCases": 587,
-  "browserChecks": 130,
+  "version": "2.0",
+  "checkedAt": "2026-10-11T12:17:29.659542+00:00",
+  "legacy": {
+    "version": "1.5",
+    "checkedAt": "2026-10-11T12:17:29.659542+00:00",
+    "engineTestGroups": 40,
+    "independentChecks": 93188,
+    "arithmeticCases": 587,
+    "browserChecks": 130,
+    "browserHtmlMatches": true,
+    "v1_4Preservation": "verified: all 38 original files unchanged",
+    "engineSha256": "3adbe785e66e0b6f81b1c5c2cab6b124ecdba46eec11f661ab0fdb1765b157d2",
+    "appSha256": "5a0630fbc2d199d46b3ac60fc24eb4b989e7521d87e4d6beff6b1b9353b4324a"
+  },
+  "appSha256": "99e519e9f7cfe1ba278a09a3244df2271f5e664afbff55841e013595613338fc",
   "browserHtmlMatches": true,
-  "v1_4Preservation": "verified: all 38 original files unchanged",
-  "engineSha256": "3adbe785e66e0b6f81b1c5c2cab6b124ecdba46eec11f661ab0fdb1765b157d2",
-  "appSha256": "5a0630fbc2d199d46b3ac60fc24eb4b989e7521d87e4d6beff6b1b9353b4324a"
+  "browserChecks": 44,
+  "engineSha256": "e475c33d246c8da19d3c58874bd8cf4a9e14248153439559fb72b21068225100",
+  "engine": {
+    "status": "pass",
+    "checks": 83,
+    "independentCases": 67
+  },
+  "independentAudit": {
+    "status": "pass",
+    "checks": 3551,
+    "scope": "Independent Python rebuild from saved SNDK inputs across defaults and sensitivity cases. This validates arithmetic, not financial forecasts."
+  }
 }

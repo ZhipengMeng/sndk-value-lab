@@ -1,0 +1,5 @@
+{
+  "status": "pass",
+  "checks": 3551,
+  "scope": "Independent Python rebuild from saved SNDK inputs across defaults and sensitivity cases. This validates arithmetic, not financial forecasts."
+}

@@ -1,4 +1,4 @@
-"""Build/test v1.5, verify preserved v1.4, and optionally run browser/package checks."""
+"""Build/test v2.0 and v1.5, verify preserved v1.4, and optionally run browser/package checks."""
 from pathlib import Path
 from datetime import datetime, timezone
 from subprocess import run
@@ -16,10 +16,17 @@ commands = [
     [sys.executable, 'build_v1_5.py'], ['node', 'generate_results.js'],
     ['node', '--check', 'sndk_valuation_v1_5.js'], ['node', 'test_engine.js'],
     [sys.executable, 'audit_independent.py'],
+    [sys.executable, 'v2.0/build.py'],
+    ['node', '--check', 'v2.0/source/engine.js'],
+    ['node', '--check', 'v2.0/source/app.js'],
+    ['node', 'v2.0/test_engine.js'],
+    [sys.executable, 'v2.0/audit_independent.py'],
 ]
 if args.browser:
     commands.append([sys.executable, 'test_browser.py'])
+    commands.append(['node', 'v2.0/test_browser.js'])
 commands.append([sys.executable, 'build_v1_5.py', '--check'])
+commands.append([sys.executable, 'v2.0/build.py', '--check'])
 for command in commands:
     run(command, cwd=ROOT, check=True)
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -38,7 +45,8 @@ if args.package:
 engine = json.loads((ROOT / 'test_engine_report.json').read_text())
 audit = json.loads((ROOT / 'audit_independent_report.json').read_text())
 report = {
-    'version': '1.5', 'checkedAt': datetime.now(timezone.utc).isoformat(),
+    'version': '2.0',
+    'legacyVersion': '1.5', 'checkedAt': datetime.now(timezone.utc).isoformat(),
     'engineTestGroups': engine['engineAssertionsPassed'],
     'independentChecks': audit['independentArithmeticChecksPassed'], 'arithmeticCases': audit['caseCount'],
     'browserChecks': browser.get('checksPassed') if browser_current else None,
@@ -46,6 +54,24 @@ report = {
     'engineSha256': sha(ROOT / 'sndk_valuation_v1_5.js'),
     'appSha256': sha(ROOT / 'sndk_valuation_v1_5.html'),
 }
+current_browser_path=ROOT / 'v2.0/verification/browser_report.json'
+current_browser=json.loads(current_browser_path.read_text()) if current_browser_path.exists() else {}
+current_match=current_browser.get('appSha256')==sha(ROOT / 'v2.0/sndk_valuation_v2_0.html')
+if args.package:
+    assert current_match, 'Run v2.0 browser tests before packaging'
+legacy_report=report
+report={
+    'version':'2.0',
+    'checkedAt':legacy_report['checkedAt'],
+    'legacy':{k:v for k,v in legacy_report.items() if k not in ['legacyVersion']},
+    'appSha256':sha(ROOT / 'v2.0/sndk_valuation_v2_0.html'),
+    'browserHtmlMatches':current_match,
+    'browserChecks':current_browser.get('checks') if current_match else None,
+    'engineSha256':sha(ROOT / 'v2.0/source/engine.js'),
+    'engine':json.loads((ROOT / 'v2.0/verification/engine_report.json').read_text()),
+    'independentAudit':json.loads((ROOT / 'v2.0/verification/independent_audit.json').read_text()),
+}
+report['legacy']['version']='1.5'
 (ROOT / 'release_validation.json').write_text(json.dumps(report, indent=2) + '\n')
 print('Preservation:', preservation)
 if args.package:

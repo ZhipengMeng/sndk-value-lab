@@ -14,3 +14,6 @@ __pycache__/
 remote_verification.json
 _site/
 publication_verification.json
+dist/
+v2.0/verification/audit_cases.json
+v2.0/verification/*_settings.json

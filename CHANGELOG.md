@@ -1,5 +1,12 @@
 # Release history
 
+## v2.0 — October 11, 2026
+
+- Publishes the audited NAND model as the default calculator while preserving the original v1.5 model and download.
+- Adds end-market drivers, explicit JV funding and cash allowances, forward EPS reconciliation, the equity bridge, and terminal margin normalization.
+- Retains the audited October 9 snapshot. Central value is $1,998.15 under the default assumptions, a conditional present value.
+- Adds portable independent arithmetic and desktop/mobile checks to the existing verification and publishing workflow.
+
 ## v1.5
 
 - Adds a public web entry point, usage and privacy notes, and GitHub Pages deployment after successful checks. The standalone app and all valuation equations remain available; source copyright stays reserved.

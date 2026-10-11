@@ -1,11 +1,12 @@
 {
   "name": "sndk-value-lab",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Offline SNDK scenario calculator; Playwright is needed only for browser tests",
   "scripts": {
-    "test": "node test_engine.js",
-    "test:browser": "node test_browser.js"
+    "test": "node v2.0/test_engine.js",
+    "test:browser": "node v2.0/test_browser.js",
+    "test:legacy": "node test_engine.js"
   },
   "devDependencies": {
     "playwright": "1.62.1"

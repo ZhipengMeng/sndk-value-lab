@@ -1,6 +1,6 @@
 {
   "version": "1.5",
-  "testedAt": "2026-10-11T01:46:31.749814+00:00",
+  "testedAt": "2026-10-11T12:17:16.724422+00:00",
   "caseCount": 587,
   "independentArithmeticChecksPassed": 93188,
   "scope": "Independent cash allowance, SBC, operating/fade, funding, buyback and PV reconstruction; not forecast validation."

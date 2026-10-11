@@ -23,11 +23,15 @@ patterns = [r'/Users/' + r'[^/\s]+/', r'/home/' + r'[^/\s]+/',
 for p in records:
     text = p.read_text()
     assert not any(re.search(pattern, text) for pattern in patterns), 'Private-path or credential pattern: ' + p.name
-with zipfile.ZipFile(ROOT.parent / 'sndk_valuation_v1_5.zip') as z:
+with zipfile.ZipFile(ROOT / 'dist' / 'sndk_value_lab_v2_0.zip') as z:
     assert z.testzip() is None
     assert len(z.namelist()) == len(records) + 1
     for p in [*records, manifest]:
-        assert hashlib.sha256(z.read('v1.5/' + p.relative_to(ROOT).as_posix())).hexdigest() == sha(p)
+        assert hashlib.sha256(z.read('sndk-value-lab/' + p.relative_to(ROOT).as_posix())).hexdigest() == sha(p)
 browser = json.loads((ROOT / 'test_browser_report.json').read_text())
 assert browser['appSha256'] == sha(ROOT / 'sndk_valuation_v1_5.html'), 'Browser result is stale'
 print(f'PASS manifest ({len(records)} files), ZIP, privacy pattern check and tested HTML')
+
+current = json.loads((ROOT / 'v2.0/verification/browser_report.json').read_text())
+assert current['appSha256'] == sha(ROOT / 'v2.0/sndk_valuation_v2_0.html'), 'v2.0 browser result is stale'
+print('PASS v2.0 tested HTML matches release')
