@@ -1,0 +1,51 @@
+{
+  "version": "1.5",
+  "asOf": "2026-10-09",
+  "selectedScenario": "management",
+  "targetYear": 2030,
+  "fadeYears": 4,
+  "rates": [
+    {
+      "discountRate": 11,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 3013.0255065910123,
+      "pvHigh": 3195.9471428835614,
+      "midpoint": 3104.486324737287,
+      "coreGM": 80,
+      "troughSpot": 1,
+      "settledSpot": 1,
+      "costWedgeBn": 5.912985194219224
+    },
+    {
+      "discountRate": 12,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 2682.868034197595,
+      "pvHigh": 2817.077454714779,
+      "midpoint": 2749.972744456187,
+      "coreGM": 80,
+      "troughSpot": 1,
+      "settledSpot": 1,
+      "costWedgeBn": 5.912985194219224
+    },
+    {
+      "discountRate": 13,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 2412.491765416343,
+      "pvHigh": 2512.7250932052807,
+      "midpoint": 2462.6084293108115,
+      "coreGM": 80,
+      "troughSpot": 1,
+      "settledSpot": 1,
+      "costWedgeBn": 5.912985194219224
+    }
+  ],
+  "low": 2412.491765416343,
+  "high": 3195.9471428835614,
+  "midpoint": 2749.972744456187
+}

@@ -1,0 +1,7 @@
+{
+  "version": "1.5",
+  "testedAt": "2026-10-11T01:27:38.473911+00:00",
+  "caseCount": 587,
+  "independentArithmeticChecksPassed": 93188,
+  "scope": "Independent cash allowance, SBC, operating/fade, funding, buyback and PV reconstruction; not forecast validation."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "1.5",
+  "testedAt": "2026-10-11T01:27:06.206Z",
+  "browser": "154.0.8037.99",
+  "executable": "Google Chrome",
+  "appSha256": "14a66e55fe093d37f794e86e063ac5a366bc6ad46480da4f127ebc8d30187877",
+  "method": "Direct file:// navigation of complete standalone HTML",
+  "checksPassed": 130,
+  "testedLayouts": {
+    "desktop": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshot": "desktop_preview.png"
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshot": "mobile_preview.png"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+__pycache__/
+.venv/
+.env
+.env.*
+*.log
+*.zip
+*.png
+*_export_settings.json
+*_export_results.csv
+*_guidance_export.json
+.github-upload.json
+remote_verification.json

@@ -1,0 +1,26 @@
+{
+  "engineAssertionsPassed": 40,
+  "date": "2026-10-10",
+  "testedAt": "2026-10-11T01:27:38.127Z",
+  "snapshot": "2026-10-09",
+  "version": "1.5",
+  "defaultDeepDecline": {
+    "errorCode": null,
+    "fundingShortfall": 0,
+    "firstShortfallYear": null,
+    "pvLow": 1522.8035483912236,
+    "pvHigh": 1602.1021370230792,
+    "midpoint": 1562.4528427071514,
+    "coreGM": 69.22940097075936,
+    "troughSpot": 0.61,
+    "settledSpot": 0.72,
+    "costWedgeBn": 7.138141604928492
+  },
+  "reverse": {
+    "settledAspIndex": 0.7272908392362296,
+    "impliedTerminalGM": 69.53786558851843,
+    "impliedPriceCost": 3.2827640587886293,
+    "modeledPV": 1581.8199995202353,
+    "troughAspIndex": 0.61
+  }
+}

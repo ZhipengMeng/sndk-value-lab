@@ -1,0 +1,54 @@
+{
+  "checkedOn": "2026-10-10",
+  "financialSnapshotRetained": "2026-10-09",
+  "sources": [
+    {
+      "title": "Sandisk Investor Day 2026: Sustainable Value Creation",
+      "url": "https://investor.sandisk.com/static-files/9023ed3e-9baf-44f1-944d-dbe81121ea31",
+      "pdfPage": 13,
+      "classification": "Published forward targets, not realized results",
+      "period": "FY2028-FY2030 average performance",
+      "grossMarginPct": 80,
+      "operatingMarginPct": 75,
+      "adjustedFcfMarginPct": 50,
+      "revenueGrowth": "mid-to-high teens",
+      "capitalIntensity": "mid-single-digit percentage of revenue",
+      "modelInterpretations": [
+        "Allocate period-average margins evenly to individual reference years",
+        "Use 16% annual reference bit growth and flat ASP",
+        "Use 5% as a cash-capital proxy; its equivalence to reported capital intensity is not established",
+        "Classify the remaining cash-conversion difference as an unallocated allowance"
+      ]
+    },
+    {
+      "title": "Sandisk FY2026 Q4 financial results",
+      "url": "https://investor.sandisk.com/news-releases/news-release-details/sandisk-reports-fiscal-fourth-quarter-2026-financial-results",
+      "classification": "Reported historical cash-flow reconciliation",
+      "fy2026FcfBn": 11.494,
+      "netFlashVenturesAdjustmentBn": -0.275,
+      "nbmPaymentsAdjustmentBn": -2.476,
+      "fy2026AdjustedFcfBn": 8.743,
+      "definitionSummary": "Adjusted FCF includes net Flash Ventures activity and removes NBM prepayment/deposit effects."
+    },
+    {
+      "title": "Sandisk Investor Day press release",
+      "url": "https://www.sandisk.com/company/newsroom/press-releases/2026/2026-08-13-sandisk-investor-day-2026",
+      "classification": "Cross-check of published financial framework"
+    },
+    {
+      "title": "StockAnalysis / S&P forecast anchor",
+      "url": "https://stockanalysis.com/stocks/sndk/forecast/",
+      "classification": "Original FY2027 analyst estimates retained from v1.3, not realized results",
+      "revenueBn": 49.14,
+      "grossMarginPct": 84.64,
+      "operatingIncomeBn": 39.11,
+      "adjustedEps": 214.82
+    }
+  ],
+  "notEstablishedBySources": [
+    "Exact future working-capital, capital investment, JV funding and cash-tax allocation",
+    "A 50% margin for every year or any particular downside scenario",
+    "The FY2031-FY2032 extension or perpetual cash-conversion assumptions",
+    "Future financing terms, dilution, or intrayear liquidity requirements"
+  ]
+}

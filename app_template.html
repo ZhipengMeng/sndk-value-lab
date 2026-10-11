@@ -1,0 +1,208 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNDK Value Lab v1.5 — prices, costs, contracts, intrinsic valuation</title><style>
+    :root { --bg:#0b1420;--paper:#111f2e;--raised:#172a3b;--stroke:#284052;--text:#f1f5f7;--muted:#aec0c9;--accent:#d1af68;--teal:#74c5b7;--red:#d88f86;--grid-stroke:#324554;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    * {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;background:radial-gradient(ellipse at 80% 0%,#1c3646 0%,transparent 43%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC","PingFang SC",Arial,sans-serif;line-height:1.6}
+    a{color:#abd6dc;text-decoration:none}a:hover{text-decoration:underline}
+    button,input,select{font:inherit}
+    button{border:1px solid var(--stroke);background:var(--raised);color:var(--text);padding:9px 13px;border-radius:9px;cursor:pointer;transition:.18s}
+    button:hover{background:#244255;border-color:#517482}
+    button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(2rem,5vw,3.45rem);letter-spacing:-.055em;line-height:1.1;margin-bottom:16px}
+    h2{font-size:1.32rem;letter-spacing:-.02em;margin-bottom:8px}
+    h3{font-size:1.06rem;margin-bottom:6px}
+    p{color:#c4d1d7}
+    .shell{max-width:1210px;margin:auto;padding:0 23px}
+    header{border-bottom:1px solid #324a589c;background:#0b1420dd}
+    .headerline{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+    .logo{font-weight:800;letter-spacing:.065em;font-size:.93rem}
+    .logo span{color:var(--accent)}
+    nav{display:flex;gap:18px;flex-wrap:wrap}nav a{font-size:.87rem;color:#c9d6dc}
+    .hero{padding:55px 0 28px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--teal);font-weight:750;margin-bottom:14px}
+    .hero p{max-width:920px;font-size:1.03rem}
+    .note{font-size:.82rem;color:var(--muted);margin-top:9px}
+    .tagrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}
+    .tag{border:1px solid var(--stroke);border-radius:100px;padding:5px 12px;color:#bacbd1;font-size:.76rem}
+    section{margin:29px 0}
+    .panel{background:linear-gradient(140deg,#152637,#101e2c);border:1px solid var(--stroke);border-radius:15px;padding:24px;box-shadow:0 11px 35px #00000014}
+    .section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 15px}
+    .columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+    .metric{padding:19px;border:1px solid var(--stroke);border-radius:11px;background:var(--raised);min-height:132px}
+    .metric small{display:block;color:var(--muted);font-size:.8rem;line-height:1.5;margin-bottom:12px}
+    .metric strong{display:block;font:700 clamp(1.15rem,2.1vw,1.9rem) var(--mono);letter-spacing:-.05em}
+    .metric em{display:block;font-style:normal;color:#bed0d6;font-size:.72rem;margin-top:6px}
+    .gold{color:var(--accent)}
+    .teal{color:var(--teal)}
+    .top-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+    label{display:block;color:var(--muted);font-size:.78rem}
+    label span{display:block;margin-bottom:6px}
+    input[type=number],select{border:1px solid #435b6b;background:#091723;color:var(--text);border-radius:8px;width:100%;min-height:43px;padding:8px 11px;font-family:var(--mono)}
+    select{font-family:inherit}
+    .toggle{display:flex;align-items:center;gap:10px;padding:12px 0 5px;color:var(--text);font-size:.89rem}
+    .toggle input{accent-color:var(--teal);width:18px;height:18px}
+    #errors{display:none;color:#ffcdc6;background:#482d2e;border:1px solid #a06862;padding:10px 14px;margin-top:14px;border-radius:8px}
+    #chart{width:100%;max-height:330px;display:block;margin:8px 0 1px;overflow:visible}
+    .table-scroll{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;white-space:nowrap}
+    th{font-weight:600;text-align:left;padding:12px 10px;color:#adc6cf;border-bottom:1px solid #466071;background:#172a3b}
+    td{padding:12px 10px;border-bottom:1px solid #2f4452;color:#e4eff3;font-variant-numeric:tabular-nums}
+    td.bold{font-weight:700}
+    .source-list{font-size:.86rem;margin-bottom:0;padding-left:21px;color:#c3d1d8}
+    .source-list li{margin:6px 0}
+    .input-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:12px}
+    .scenario-input{background:#0e1c28;border:1px solid var(--stroke);border-radius:11px;padding:15px 17px;margin-top:12px}
+    .scenario-input summary{cursor:pointer;font-weight:750;color:var(--text);list-style-position:inside}
+    .scenario-input summary::marker{color:var(--accent)}
+    .sc-note{font-size:.79rem;color:var(--muted);margin:5px 0 13px}
+    .s-stress{border-left:3px solid #b3776e}.s-downcycle{border-left:3px solid var(--accent)}.s-growth{border-left:3px solid var(--teal)}
+    .controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:18px}
+    .button-gold{background:var(--accent);color:#1d2429;font-weight:750;border-color:var(--accent)}.button-gold:hover{background:#e4c680}
+    .file-button{display:inline-block;border:1px solid var(--stroke);border-radius:9px;padding:9px 13px;color:var(--text);background:var(--raised);cursor:pointer;font-size:.88rem}
+    .file-button input{display:none}
+    .divider{height:1px;background:var(--stroke);margin:20px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .evidence{padding:18px;border-radius:11px;border:1px solid var(--stroke);background:#10202f}
+    .evidence h3{margin-bottom:10px}
+    .evidence p{font-size:.9rem;margin-bottom:0}
+    .flag{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:#dcc789;margin-bottom:7px}
+    .flag.red{color:var(--red)}
+    .formula{font-family:var(--mono);font-size:.75rem;line-height:1.8;border-left:3px solid #597f85;padding:12px;background:#0d1a27;color:#b7cbd2;overflow-wrap:anywhere;border-radius:6px}
+    footer{padding:28px 0 45px;border-top:1px solid var(--stroke);font-size:.78rem;color:var(--muted)}
+    .divider-note{background:#1b2b35;border:1px solid #4c5360;padding:13px 17px;color:#d0d4d9;border-radius:9px;margin-top:15px;font-size:.85rem}
+    .mini-table{font-size:.82rem;margin:0}
+    .mini-table th{background:none;padding:7px}.mini-table td{padding:7px}
+    @media(max-width:890px){.columns{grid-template-columns:repeat(2,minmax(0,1fr))}.top-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-2{grid-template-columns:1fr}}
+    @media(max-width:580px){.shell{padding:0 14px}.hero{padding:31px 0 10px}.panel{padding:16px}.metric{padding:13px;min-height:113px}.columns{gap:8px}.metric strong{font-size:1.14rem}.top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:10px}.input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:2rem}.metric small{font-size:.68rem}}
+    @media print{body{background:white;color:black}.panel{box-shadow:none;border-color:#aaa;background:white}header{background:white}a{color:#305b85}input,button,.controls{display:none!important}}
+  
+.top-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:12px 0 20px}
+.table-scroll input[type=number]{min-width:112px;max-width:145px;padding:6px 8px}
+.table-scroll select{min-width:170px}.table-scroll{max-width:100%;margin:14px 0 24px}
+.scenario-input{margin:16px 0;padding:16px}.scenario-input h3{margin-top:25px}
+details summary{cursor:pointer;font-weight:700;padding:10px 0}
+.notice{border-left:3px solid var(--accent);padding:14px 18px;background:#1c2e3d;margin:20px 0;color:#e8ddc3}
+#errors{position:sticky;top:0;z-index:2}#importStatus{overflow-wrap:anywhere}
+.metric strong{font-size:clamp(1.05rem,1.8vw,1.65rem)}
+.state-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}
+.state-row select{width:100%;min-width:0}input[type=date]{width:100%;border:1px solid #435b6b;border-radius:8px;padding:8px;background:#091723;color:white;min-height:43px}
+button:disabled{opacity:.4;cursor:not-allowed}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.file-button{border:1px solid var(--stroke);padding:9px 13px;border-radius:9px;cursor:pointer}.file-button input{max-width:220px}
+.formula{overflow-wrap:anywhere;margin:15px 0}code{white-space:normal}.note strong{color:var(--text)}
+@media(max-width:700px){.top-grid,.state-row{grid-template-columns:repeat(2,minmax(0,1fr))}.metric strong{font-size:1.08rem}nav{display:none}.panel{min-width:0}}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.subheading{color:var(--teal);font-size:.76rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+#reverseReport{font-size:.98rem;font-weight:600;margin-bottom:5px}
+#status{max-height:120px;overflow:auto;overflow-wrap:anywhere}
+.table-scroll input[type=number]{min-width:110px;width:120px;max-width:140px}
+button:disabled{opacity:.35}
+.value-important{border-left:3px solid var(--teal);padding:14px 18px;background:var(--raised);border-radius:9px;margin:15px 0}
+.card-row{padding:20px;border:1px solid var(--stroke);border-radius:12px;background:var(--raised)}
+hr{border:0;height:1px;background:var(--stroke);margin:27px 0}
+#status{font-size:.86rem}
+#priceGrid td:first-child{font-weight:700;color:var(--teal)}
+#priceGrid td:not(:first-child){font-family:var(--mono)}
+#rateTable td:first-child{font-weight:800;color:var(--accent)}
+.working-columns{grid-template-columns:1fr 1fr;margin-top:16px}
+@media(max-width:580px){.working-columns{grid-template-columns:1fr}}
+@media(max-width:880px){.grid-3{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="shell headerline"><div class="logo">SNDK <span> / </span> VALUE LAB <span>v1.5</span></div>
+<nav><a href="#overview">Results</a><a href="#reverse">Reverse valuation</a><a href="#evidence">Evidence layer</a><a href="#parameters">Inputs</a><a href="#method">Method</a></nav></div></header>
+<main class="shell">
+<section class="hero"><div class="eyebrow">Guidance-based valuation · October 2026 snapshot · works offline</div>
+<h1>Explore Sandisk's<br><span class="gold">future cash flows.</span></h1>
+<p>Compare company guidance, your assumptions and potential NAND cycles. Every valuation is conditional on the selected inputs.</p>
+<div class="notice"><strong>v1.5 adds the guidance-based working valuation.</strong> Start with management's FY2028–30 framework, then slow growth over four years. The FY2027 baseline and long-run profitability are analyst assumptions. Cash allowances and stock-compensation costs remain visible.</div>
+<div class="tagrow"><span class="tag">Reference: Oct 9, 2026 close · $1,581.82</span><span class="tag">Original versions preserved</span><span class="tag">Inputs editable; evidence not invented</span><span class="tag">Financial scenarios ≠ probabilities</span></div></section>
+<section class="panel" id="overview"><div class="section-heading"><h2>Working valuation</h2><span class="tag">Present value per share</span></div>
+<label><span>Valuation preset — selecting a preset restores its saved assumptions</span><select id="valuationPreset"><option value="guidance">Guidance-based working range: approximately $2,400–$3,200</option><option value="legacy">v1.4-equivalent: deeper decline / recovery</option><option value="custom" disabled>Custom assumptions</option></select></label>
+<p class="note" id="presetNote"></p>
+<div class="columns working-columns"><div class="metric"><small>Rounded range at 11%–13% required return</small><strong class="gold" id="workingPV">—</strong><em id="workingExact">—</em></div><div class="metric"><small>Central calculation</small><strong id="workingMid">—</strong><em>Long-run growth range: 1.5%–2.5% in the saved preset. No scenario probabilities are assigned.</em></div></div>
+<div class="table-scroll"><table id="workingRates" aria-label="Working valuation at 11 12 and 13 percent required returns"></table></div>
+<h3>Selected scenario and editable assumptions</h3>
+<div class="state-row">
+<label><span>Scenario</span><select id="selected">
+<option value="adjustment">Price-led adjustment</option><option value="severe">Deeper decline / recovery</option>
+<option value="management" selected>Management reference / flat ASP</option><option value="collapse">Deep collapse + floor</option>
+<option value="historical">Historical-economics price stress</option><option value="growth">Sustained growth</option></select></label>
+<label><span>End of explicit operating forecast</span><select id="targetYear"><option value="2029">FY2029</option><option value="2030" selected>FY2030</option><option value="2031">FY2031</option><option value="2032">FY2032</option></select></label>
+<label><span>Cost calibration</span><select id="calibrationMode"><option value="management">Management framework (on)</option><option value="unadjusted">Original cost path (off)</option></select></label>
+<label><span>Cash and capital treatment</span><select id="capitalMode"><option value="distribution">Distribution-equivalent PV</option><option value="buyback">Scenario-priced repurchases</option></select></label>
+<label><span>Cash-flow assumptions</span><select id="cashFlowMode"><option value="guidance">Guidance cash allowance (on)</option><option value="unadjusted">Detailed cash assumptions only (off)</option></select></label>
+</div>
+<div class="columns">
+<div class="metric"><small>Conditional intrinsic PV / share</small><strong id="heroPV" class="gold">—</strong><em id="heroGap">—</em></div>
+<div class="metric"><small>Core gross margin (selected terminal FY)</small><strong id="heroMargin">—</strong><em id="heroMarginSub">—</em></div>
+<div class="metric"><small>Spot-price trough (relative FY2027)</small><strong class="teal" id="heroASP">—</strong><em id="heroASPSub">—</em></div>
+<div class="metric"><small>Derived (NOT assumed) terminal P/E</small><strong id="heroTerminal">—</strong><em id="heroTerminalSub">—</em></div>
+</div>
+<p id="windowNote" class="note"></p><div class="table-scroll"><table id="summaryTable" aria-label="Scenario valuation summary"></table></div>
+<div class="value-important" id="cashSummary"></div><p class="note" id="warnings"></p>
+<div class="notice" id="fundingReport" role="status"></div>
+<h3 id="selectedTitle">Selected operating bridge</h3><div class="table-scroll"><table id="bridgeTable" aria-label="Annual operating bridge"></table></div>
+<h3>Cash-flow reconciliation</h3><p id="cashGuidanceNote" class="note"></p>
+<div class="table-scroll"><table id="reconciliationTable" aria-label="Selected scenario cash flow reconciliation"></table></div>
+<details><summary>Unchanged management reference: FY2028–30 guidance check</summary>
+<p class="note">This fixed reference explains the calibration; it does not replace the selected scenario above. The company gives three-year average targets, not annual commitments.</p>
+<div class="table-scroll"><table id="guidanceReferenceTable" aria-label="Frozen reference guidance reconciliation"></table></div></details>
+<h3>Explicit forecast and earnings-fade cash flows (low-growth branch)</h3><div class="table-scroll"><table id="fadeTable" aria-label="Earnings fade cash flows"></table></div>
+</section>
+<div id="errors" role="alert"></div>
+<section class="panel" id="reverse"><h2>Reverse valuation: what would justify the quoted price?</h2>
+<p class="note">Hold the selected cyclical trough, volume and manufacturing costs fixed; <strong>contracts/HBF are OFF</strong> here and evaluated in the evidence layer. Solve for the post-cycle <strong>settled ASP</strong> that justifies a market price. A reverse solve explains the price; it does not predict equilibrium or independently confirm fair value. Choose distribution-equivalent mode and a horizon at or beyond the scenario's settlement year.</p>
+<div class="top-grid"><label><span>Target market price ($)</span><input type="number" id="quote" value="1581.82" min="0.01" step="10"></label></div>
+<div class="value-important" id="reverseReport"></div>
+<h3>Trough ASP × post-cycle equilibrium ASP</h3>
+<p class="note" id="gridNote"></p><div class="table-scroll"><table id="priceGrid" aria-label="Two-dimensional price-driven valuation grid"></table></div>
+<p class="note">These are conditional PVs, <strong>not probability-weighted targets</strong>. For all cells, core gross margins are calculated from prices, cost per bit, mix/fixed costs and production; no margin target is imposed.</p>
+<h3>Discount-rate sensitivity</h3><div class="table-scroll"><table id="rateTable" aria-label="9 11 13 discount rate sensitivities"></table></div>
+<h3>Explicit-forecast endpoint comparison</h3><div class="table-scroll"><table id="horizonTable" aria-label="Forecast horizon sensitivity"></table></div>
+<p class="note" id="fadeLogic"></p>
+<h3>Cost calibration: side-by-side</h3><div class="table-scroll"><table id="costCompare" aria-label="Cost calibration sensitivity"></table></div>
+<div class="value-important" id="safetyReport"></div>
+<details><summary>Fixed gross-margin diagnostic (NOT a price-driven valuation)</summary>
+<p class="note">This optional diagnostic forces GM and solves for ASP, using <strong>unadjusted</strong> unit costs with contracts and HBF turned off. Higher production costs can mechanically increase this fixed-margin result because they require higher ASP; do not interpret it as a price forecast or investment value.</p>
+<div class="table-scroll"><table id="gmGrid" aria-label="Gross margin consistency diagnostic"></table></div></details></section>
+<section class="panel" id="evidence"><p class="note">Evidence such as FY2028 committed-bit share changes the plausibility of price paths; no disclosed contract floor is treated as known. HBF commercialization is an additional uncertain option, not a built-in moat.</p><h2>Evidence layer: contracts, capital allocation and HBF</h2>
+<div class="grid-2"><div class="evidence"><div class="flag">Company disclosure</div><h3>New Business Model supply agreements</h3><p>Coverage is approximately half of FY2027 bit shipments and two-thirds of FY2028 bit shipments. Actual price floors, collars, contract repricing clauses and renegotiation protections have not been disclosed. The scenarios are counterfactual tests, not contract forecasts.</p></div>
+<div class="evidence"><div class="flag red">Undisclosed economics</div><h3>How much protection really exists?</h3><p>When spot ASP stays ABOVE a hypothetical floor, that floor adds nothing. In a severe collapse it can drive material value differences. The table below recomputes the same selected scenario with no floor, 0.60×, and 0.80× FY2027 indexed ASP.</p></div></div>
+<div class="table-scroll"><table id="contractTable" aria-label="Contract floor counterfactuals"></table></div>
+<label class="toggle"><input type="checkbox" id="hbfEnabled"><span><strong>Include illustrative HBF income</strong> (disabled by default; 2027 samples / 2028 potential volume are not guarantees)</span></label>
+<p class="value-important" id="hbfImpact"></p>
+<p class="note">Technology leadership or an HBF “moat” cannot be derived from FY2029 incremental cash alone. Competitive durability, manufacturing yield, customer qualification, pricing power, ecosystem lock-in and competitive supply must be evaluated separately. Contracts and HBF do not mechanically increase a fixed-margin grid cell.</p></section>
+<section class="panel" id="parameters"><h2>Adjust inputs and export a reproducible case</h2>
+<p class="note">All values are historical anchors or explicit editable assumptions, not live market data. This model makes NO automatic financial-data calls.</p>
+<h3>Current financial forecast anchor</h3><div id="group_anchors" class="top-grid"></div>
+<h3>Terminal economics and present value</h3><div id="group_valuation" class="top-grid"></div>
+<h3>Management framework reference cost calibration</h3><div id="group_management" class="top-grid"></div>
+<p class="note">The cost calibration is a <strong>synthetic burden</strong> allocating the approximately 80% GM and 75% OM FY2028–30 average targets evenly to each reference year. A separate frozen cash budget reconciles that reference to approximately 50% adjusted FCF. The 5% capital cash proxy and remaining residual are assumptions, not disclosed line items. Scenario edits do not automatically recalibrate these allowances away. Set the cash allowance off or adjust its scale when replacing it with a fully researched investment budget.</p>
+<details><summary>Capital allocation assumptions / share buybacks</summary><div id="group_capital" class="top-grid"></div></details>
+<details><summary>Working-capital, JV funding and detailed manufacturing assumptions</summary><div id="group_costs" class="top-grid"></div></details>
+<h3>Operating paths and hypothetical NBMs</h3><div id="scenarioInputs"></div>
+<div class="controls"><label><span>Financial snapshot as-of</span><input id="asOf" type="date"></label><button id="downloadCsv">Export annual results (CSV)</button>
+<button id="downloadJson">Export exact settings (JSON)</button><label class="file-button">Import validated v1.5 JSON <input type="file" id="importSettings" accept=".json,application/json"></label><button id="reset">Restore defaults</button></div>
+<p id="status" role="status" class="note"></p>
+<p class="note">Imports reject missing, unknown, non-finite or inconsistent fields and preserve existing settings on failure. v1.0–v1.3 settings require a reviewed migration; the new cash assumptions are not silently added.</p>
+</section>
+<section class="panel" id="method"><h2>Valuation method and model limits</h2>
+<div class="grid-2">
+<div><h3>1. Operating cost bridge</h3><div class="formula">Core sales = FY27 base sales × bit-index × contracted/spot blended ASP − HBF displacement.<br>COGS = volume-sensitive costs + fixed costs + standalone D&A + management-reference cost wedge.<br>GM and operating margin are OUTPUTS, not independently chosen.</div>
+<p class="note">Contract ASP is clipped between illustrative floor and optional cap. Calibrated extra COGS stays tied to volume, not the pricing of a particular scenario. Future capacity, customer mix, competitor economics and elasticity are assumptions.</p></div>
+<div><h3>2. Fade and terminal value</h3><div class="formula">Fade revenue growth starts from each scenario's structural bit growth × sustainable ASP trend, <em>not</em> the final cyclical growth rate, then converges toward g.<br>Fade economic profit margin converges toward the TRAILING cycle window ending in the selected explicit year.<br>FCF = after-tax economic EBIT × (1 − growth / incremental ROIC).<br>TV = FCF<sub>last fade</sub> × (1 + g) / (cost of equity − g).</div>
+<p class="note">Two terminal-growth assumptions create the range. The implied PE is a diagnostic. Changes in endpoint can change value if they include an actual trough or recovery; see endpoint comparison. The historical invariant fixture in the tests uses identical cash conversion and sustainable economics at every terminal date.</p></div></div>
+<div class="grid-2"><div><h3>3. Interim capital</h3><p class="note">FY2027 remaining cash flow uses a fiscal-year fraction. Explicit-year cash flow is linked to EBIT, incremental direct capex, JV net funding, working capital and economic SBC. Fade-year FCF uses incremental ROIC. Net cash is excluded by default pending reconciliation of securities, deposits, minimum operating cash and obligations.</p></div>
+<div><h3>4. Capital and funding</h3><p class="note">Both modes check cumulative cash from the valuation date. A gap makes valuation N/M until funding is specified. Distribution mode assumes earlier cash can be retained, so its result is a minimum annual funding need. Buyback mode also subtracts actual modeled repurchases. No external borrowing, automatic share issuance, or intra-year liquidity model is assumed.</p></div></div>
+<div class="notice">Material uncertainty remains. Discount rates, long-run g, incremental ROIC, management-reference costs, actual contract floors, competitors’ expansion, unit economics, HBF commercialization and terminal earnings durability can all change the valuation. The model reports conditional current VALUE, not a trading-floor prediction or an investment recommendation. High-future-margin cases and historical-economics price shocks have not been assigned probabilities.</div>
+</section>
+<section class="panel" id="sources"><h2>References and verification status</h2>
+<ol class="source-list"><li><a href="https://stockanalysis.com/stocks/sndk/forecast/">Forecast consensus via StockAnalysis / S&amp;P Global</a> — fixed FY2027 inputs ($49.14B revenue, 84.64% GM, $39.11B adjusted EBIT, $214.82 EPS), retrieved for the 2026-10-09 snapshot; estimates are not realized GAAP amounts.</li>
+<li><a href="https://investor.sandisk.com/news-releases/news-release-details/sandisk-reports-fiscal-fourth-quarter-2026-financial-results">SanDisk FY2026 results</a> — Q1 FY2027 share-count and tax guidance, cash/debt, adjusted and reported FCF reconciliation.</li>
+<li><a href="https://investor.sandisk.com/static-files/9023ed3e-9baf-44f1-944d-dbe81121ea31">2026 Investor Day CFO presentation, PDF page 13</a> — FY2028–30 average GM ≈80%, OM ≈75%, adjusted FCF margin ≈50%, and mid-single-digit capital intensity. Constant annual allocations and a 5% cash capital proxy are model assumptions. The Q4 release defines adjusted FCF after net Flash Ventures activity and excluding NBM prepayments/deposits.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm">FY2026 Form 10-K</a> — financial history, capital, manufacturing and commitments.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/2023554/000162828026053346/sndk-20260805.htm">2026 8-K repurchase authorization</a> — authorization is discretionary; not evidence of purchases or a cash asset.</li></ol>
+<p class="note">Please see README.md for mathematical definitions, data provenance, test instructions and limitations. No historical P/B or EV/sales values have been invented; none is presented as an independent cross-check.</p></section>
+</main><footer><div class="shell">SNDK Value Lab v1.5 · Offline source included · No guaranteed floor · Scenario analysis rather than forecast probabilities.<br>© Analytical educational model, 2026.</div></footer>
+<!-- EMBED_ENGINE --></body></html>

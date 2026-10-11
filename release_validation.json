@@ -1,0 +1,12 @@
+{
+  "version": "1.5",
+  "checkedAt": "2026-10-11T01:27:38.526379+00:00",
+  "engineTestGroups": 40,
+  "independentChecks": 93188,
+  "arithmeticCases": 587,
+  "browserChecks": 130,
+  "browserHtmlMatches": true,
+  "v1_4Preservation": "verified: all 38 original files unchanged",
+  "engineSha256": "3adbe785e66e0b6f81b1c5c2cab6b124ecdba46eec11f661ab0fdb1765b157d2",
+  "appSha256": "14a66e55fe093d37f794e86e063ac5a366bc6ad46480da4f127ebc8d30187877"
+}

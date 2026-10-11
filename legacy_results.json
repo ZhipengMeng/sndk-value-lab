@@ -1,0 +1,587 @@
+{
+  "version": "1.5",
+  "asOf": "2026-10-09",
+  "scenarios": {
+    "adjustment": {
+      "name": "Price-led adjustment",
+      "pvLow": 2113.092039382207,
+      "pvHigh": 2225.836791032948,
+      "terminalGM": 73.94840303686036,
+      "troughIndex": 0.69,
+      "settledIndex": 0.79,
+      "fundingShortfall": 0,
+      "annualCashBridge": [
+        {
+          "year": 2027,
+          "revenue": 49.14,
+          "rawEconomicFcf": 29.185499999999998,
+          "capitalAllowance": 0,
+          "otherAllowance": 0,
+          "adjustedFcfProxy": 29.423499999999997,
+          "economicSbcCost": 0.23799999999999955,
+          "economicFcf": 29.185499999999998
+        },
+        {
+          "year": 2028,
+          "revenue": 45.71699962186495,
+          "rawEconomicFcf": 26.22948410112329,
+          "capitalAllowance": 1.4966675862068965,
+          "otherAllowance": 4.233281379310353,
+          "adjustedFcfProxy": 20.754535135606044,
+          "economicSbcCost": 0.25500000000000256,
+          "economicFcf": 20.499535135606042
+        },
+        {
+          "year": 2029,
+          "revenue": 44.68988160000001,
+          "rawEconomicFcf": 23.517798211980516,
+          "capitalAllowance": 1.6371143077288945,
+          "otherAllowance": 4.75317963947682,
+          "adjustedFcfProxy": 17.408004264774796,
+          "economicSbcCost": 0.2804999999999964,
+          "economicFcf": 17.1275042647748
+        },
+        {
+          "year": 2030,
+          "revenue": 51.57049396217623,
+          "rawEconomicFcf": 26.74366442757512,
+          "capitalAllowance": 1.9217756592457258,
+          "otherAllowance": 5.341098764134002,
+          "adjustedFcfProxy": 19.786790004195392,
+          "economicSbcCost": 0.30600000000000094,
+          "economicFcf": 19.48079000419539
+        },
+        {
+          "year": 2031,
+          "revenue": 61.084965666816025,
+          "rawEconomicFcf": 32.511686018369765,
+          "capitalAllowance": 2.152388738355213,
+          "otherAllowance": 5.982030615830083,
+          "adjustedFcfProxy": 24.71726666418447,
+          "economicSbcCost": 0.3400000000000034,
+          "economicFcf": 24.377266664184468
+        },
+        {
+          "year": 2032,
+          "revenue": 68.41516154683394,
+          "rawEconomicFcf": 36.72547977184786,
+          "capitalAllowance": 2.410675386957839,
+          "otherAllowance": 6.699874289729694,
+          "adjustedFcfProxy": 27.98893009516032,
+          "economicSbcCost": 0.3739999999999952,
+          "economicFcf": 27.614930095160325
+        }
+      ]
+    },
+    "severe": {
+      "name": "Deeper decline / recovery",
+      "pvLow": 1522.8035483912236,
+      "pvHigh": 1602.1021370230792,
+      "terminalGM": 69.22940097075936,
+      "troughIndex": 0.61,
+      "settledIndex": 0.72,
+      "fundingShortfall": 0,
+      "annualCashBridge": [
+        {
+          "year": 2027,
+          "revenue": 49.14,
+          "rawEconomicFcf": 29.185499999999998,
+          "capitalAllowance": 0,
+          "otherAllowance": 0,
+          "adjustedFcfProxy": 29.423499999999997,
+          "economicSbcCost": 0.23799999999999955,
+          "economicFcf": 29.185499999999998
+        },
+        {
+          "year": 2028,
+          "revenue": 41.44993225999772,
+          "rawEconomicFcf": 23.264445016355037,
+          "capitalAllowance": 1.443215172413793,
+          "otherAllowance": 4.082092758620697,
+          "adjustedFcfProxy": 17.99413708532055,
+          "economicSbcCost": 0.25500000000000256,
+          "economicFcf": 17.739137085320547
+        },
+        {
+          "year": 2029,
+          "revenue": 34.96330656000001,
+          "rawEconomicFcf": 16.351343645768576,
+          "capitalAllowance": 1.522265727467301,
+          "otherAllowance": 4.419729537217604,
+          "adjustedFcfProxy": 10.68984838108367,
+          "economicSbcCost": 0.28049999999999997,
+          "economicFcf": 10.40934838108367
+        },
+        {
+          "year": 2030,
+          "revenue": 40.644901033767695,
+          "rawEconomicFcf": 18.25966760926732,
+          "capitalAllowance": 1.75504726351716,
+          "otherAllowance": 4.877718543821812,
+          "adjustedFcfProxy": 11.932901801928347,
+          "economicSbcCost": 0.3059999999999974,
+          "economicFcf": 11.62690180192835
+        },
+        {
+          "year": 2031,
+          "revenue": 47.24976389775335,
+          "rawEconomicFcf": 21.931058780005014,
+          "capitalAllowance": 1.9305519898688757,
+          "otherAllowance": 5.365490398203993,
+          "adjustedFcfProxy": 14.975016391932146,
+          "economicSbcCost": 0.33999999999999986,
+          "economicFcf": 14.635016391932146
+        },
+        {
+          "year": 2032,
+          "revenue": 54.92792777472002,
+          "rawEconomicFcf": 26.299416654095843,
+          "capitalAllowance": 2.1236071888557633,
+          "otherAllowance": 5.902039438024392,
+          "adjustedFcfProxy": 18.647770027215685,
+          "economicSbcCost": 0.3739999999999988,
+          "economicFcf": 18.273770027215686
+        }
+      ]
+    },
+    "management": {
+      "name": "Management reference / flat ASP",
+      "pvLow": 3594.2438571848293,
+      "pvHigh": 3794.1174249877536,
+      "terminalGM": 80,
+      "troughIndex": 1,
+      "settledIndex": 1,
+      "fundingShortfall": 0,
+      "annualCashBridge": [
+        {
+          "year": 2027,
+          "revenue": 49.14,
+          "rawEconomicFcf": 29.185499999999998,
+          "capitalAllowance": 0,
+          "otherAllowance": 0,
+          "adjustedFcfProxy": 29.423499999999997,
+          "economicSbcCost": 0.23799999999999955,
+          "economicFcf": 29.185499999999998
+        },
+        {
+          "year": 2028,
+          "revenue": 57.002399999999994,
+          "rawEconomicFcf": 34.18079000000001,
+          "capitalAllowance": 1.5501199999999997,
+          "otherAllowance": 4.384470000000007,
+          "adjustedFcfProxy": 28.501199999999997,
+          "economicSbcCost": 0.25499999999999545,
+          "economicFcf": 28.2462
+        },
+        {
+          "year": 2029,
+          "revenue": 66.122784,
+          "rawEconomicFcf": 39.6357864,
+          "capitalAllowance": 1.7561392,
+          "otherAllowance": 5.0987552000000065,
+          "adjustedFcfProxy": 33.061392,
+          "economicSbcCost": 0.2805000000000035,
+          "economicFcf": 32.780891999999994
+        },
+        {
+          "year": 2030,
+          "revenue": 76.70242943999999,
+          "rawEconomicFcf": 46.114376724,
+          "capitalAllowance": 2.135121472,
+          "otherAllowance": 5.934040532000006,
+          "adjustedFcfProxy": 38.351214719999994,
+          "economicSbcCost": 0.3059999999999974,
+          "economicFcf": 38.04521472
+        },
+        {
+          "year": 2031,
+          "revenue": 88.97481815039998,
+          "rawEconomicFcf": 53.68016882483999,
+          "capitalAllowance": 2.4767409075199995,
+          "otherAllowance": 6.883487017120006,
+          "adjustedFcfProxy": 44.659940900199985,
+          "economicSbcCost": 0.3400000000000034,
+          "economicFcf": 44.31994090019998
+        },
+        {
+          "year": 2032,
+          "revenue": 103.21078905446399,
+          "rawEconomicFcf": 62.4681478880644,
+          "capitalAllowance": 2.8730194527232,
+          "otherAllowance": 7.984844939859209,
+          "adjustedFcfProxy": 51.98428349548199,
+          "economicSbcCost": 0.3739999999999952,
+          "economicFcf": 51.610283495481994
+        }
+      ]
+    },
+    "collapse": {
+      "name": "Deep collapse: floor sensitivity",
+      "pvLow": 935.7878368455365,
+      "pvHigh": 985.4884664224556,
+      "terminalGM": 60.12712606448167,
+      "troughIndex": 0.35,
+      "settledIndex": 0.54,
+      "fundingShortfall": 0,
+      "annualCashBridge": [
+        {
+          "year": 2027,
+          "revenue": 49.14,
+          "rawEconomicFcf": 29.185499999999998,
+          "capitalAllowance": 0,
+          "otherAllowance": 0,
+          "adjustedFcfProxy": 29.423499999999997,
+          "economicSbcCost": 0.23799999999999955,
+          "economicFcf": 29.185499999999998
+        },
+        {
+          "year": 2028,
+          "revenue": 31.694276625316597,
+          "rawEconomicFcf": 16.157128430291145,
+          "capitalAllowance": 1.443215172413793,
+          "otherAllowance": 4.082092758620697,
+          "adjustedFcfProxy": 10.886820499256656,
+          "economicSbcCost": 0.2550000000000008,
+          "economicFcf": 10.631820499256655
+        },
+        {
+          "year": 2029,
+          "revenue": 26.509064400000003,
+          "rawEconomicFcf": 9.216584095095662,
+          "capitalAllowance": 1.522265727467301,
+          "otherAllowance": 4.419729537217604,
+          "adjustedFcfProxy": 3.5550888304107566,
+          "economicSbcCost": 0.28049999999999997,
+          "economicFcf": 3.2745888304107567
+        },
+        {
+          "year": 2030,
+          "revenue": 29.197859728410968,
+          "rawEconomicFcf": 9.074696613684875,
+          "capitalAllowance": 1.75504726351716,
+          "otherAllowance": 4.877718543821812,
+          "adjustedFcfProxy": 2.7479308063459023,
+          "economicSbcCost": 0.30599999999999916,
+          "economicFcf": 2.441930806345903
+        },
+        {
+          "year": 2031,
+          "revenue": 35.34204569046892,
+          "rawEconomicFcf": 11.921246973948605,
+          "capitalAllowance": 1.9656529351392191,
+          "otherAllowance": 5.46304476908043,
+          "adjustedFcfProxy": 4.832549269728955,
+          "economicSbcCost": 0.3399999999999981,
+          "economicFcf": 4.492549269728957
+        },
+        {
+          "year": 2032,
+          "revenue": 43.6566564687053,
+          "rawEconomicFcf": 16.46746778060013,
+          "capitalAllowance": 2.2015312873559254,
+          "otherAllowance": 6.11861014137008,
+          "adjustedFcfProxy": 8.521326351874125,
+          "economicSbcCost": 0.3739999999999988,
+          "economicFcf": 8.147326351874126
+        }
+      ]
+    },
+    "historical": {
+      "name": "Historical-economics price stress",
+      "pvLow": 296.13333233753934,
+      "pvHigh": 310.2234813381468,
+      "terminalGM": 38.45880194151871,
+      "troughIndex": 0.3,
+      "settledIndex": 0.36,
+      "fundingShortfall": 0,
+      "annualCashBridge": [
+        {
+          "year": 2027,
+          "revenue": 49.14,
+          "rawEconomicFcf": 29.185499999999998,
+          "capitalAllowance": 0,
+          "otherAllowance": 0,
+          "adjustedFcfProxy": 29.423499999999997,
+          "economicSbcCost": 0.23799999999999955,
+          "economicFcf": 29.185499999999998
+        },
+        {
+          "year": 2028,
+          "revenue": 29.06829339386817,
+          "rawEconomicFcf": 14.24401311805625,
+          "capitalAllowance": 1.443215172413793,
+          "otherAllowance": 4.082092758620697,
+          "adjustedFcfProxy": 8.97370518702176,
+          "economicSbcCost": 0.2550000000000008,
+          "economicFcf": 8.71870518702176
+        },
+        {
+          "year": 2029,
+          "revenue": 17.1950688,
+          "rawEconomicFcf": 2.168433074182817,
+          "capitalAllowance": 1.522265727467301,
+          "otherAllowance": 4.419729537217604,
+          "adjustedFcfProxy": -3.4930621905020884,
+          "economicSbcCost": 0.28049999999999997,
+          "economicFcf": -3.7735621905020884
+        },
+        {
+          "year": 2030,
+          "revenue": 20.099735928805018,
+          "rawEconomicFcf": 1.5150140756423038,
+          "capitalAllowance": 1.75504726351716,
+          "otherAllowance": 4.877718543821812,
+          "adjustedFcfProxy": -4.811751731696668,
+          "economicSbcCost": 0.30600000000000005,
+          "economicFcf": -5.117751731696668
+        },
+        {
+          "year": 2031,
+          "revenue": 23.495072285357484,
+          "rawEconomicFcf": 2.5704666949036197,
+          "capitalAllowance": 1.9305519898688757,
+          "otherAllowance": 5.365490398203993,
+          "adjustedFcfProxy": -4.3855756931692484,
+          "economicSbcCost": 0.33999999999999986,
+          "economicFcf": -4.725575693169248
+        },
+        {
+          "year": 2032,
+          "revenue": 27.46396388736001,
+          "rawEconomicFcf": 3.915544842625386,
+          "capitalAllowance": 2.1236071888557633,
+          "otherAllowance": 5.902039438024392,
+          "adjustedFcfProxy": -3.736101784254771,
+          "economicSbcCost": 0.37399999999999967,
+          "economicFcf": -4.110101784254771
+        }
+      ]
+    },
+    "growth": {
+      "name": "Sustained growth (illustrative)",
+      "pvLow": 3633.230981853928,
+      "pvHigh": 3835.1118042054263,
+      "terminalGM": 81.32171281462239,
+      "troughIndex": 0.96,
+      "settledIndex": 1.02,
+      "fundingShortfall": 0,
+      "annualCashBridge": [
+        {
+          "year": 2027,
+          "revenue": 49.14,
+          "rawEconomicFcf": 29.185499999999998,
+          "capitalAllowance": 0,
+          "otherAllowance": 0,
+          "adjustedFcfProxy": 29.423499999999997,
+          "economicSbcCost": 0.23799999999999955,
+          "economicFcf": 29.185499999999998
+        },
+        {
+          "year": 2028,
+          "revenue": 56.33218934945099,
+          "rawEconomicFcf": 33.762287807270866,
+          "capitalAllowance": 1.5634831034482755,
+          "otherAllowance": 4.422267155172421,
+          "adjustedFcfProxy": 28.031537548650164,
+          "economicSbcCost": 0.25499999999999545,
+          "economicFcf": 27.776537548650168
+        },
+        {
+          "year": 2029,
+          "revenue": 64.57703615999999,
+          "rawEconomicFcf": 38.5762865452083,
+          "capitalAllowance": 1.7865479718192627,
+          "otherAllowance": 5.187043692984549,
+          "adjustedFcfProxy": 31.88319488040448,
+          "economicSbcCost": 0.2804999999999964,
+          "economicFcf": 31.602694880404485
+        },
+        {
+          "year": 2030,
+          "revenue": 75.77959186888494,
+          "rawEconomicFcf": 45.656739217254945,
+          "capitalAllowance": 2.1533676493974743,
+          "otherAllowance": 5.984751256261167,
+          "adjustedFcfProxy": 37.8246203115963,
+          "economicSbcCost": 0.3059999999999974,
+          "economicFcf": 37.5186203115963
+        },
+        {
+          "year": 2031,
+          "revenue": 88.92552035969395,
+          "rawEconomicFcf": 54.20006480144565,
+          "capitalAllowance": 2.4763727968070945,
+          "otherAllowance": 6.882463944700339,
+          "adjustedFcfProxy": 45.18122805993822,
+          "economicSbcCost": 0.3400000000000034,
+          "economicFcf": 44.84122805993822
+        },
+        {
+          "year": 2032,
+          "revenue": 104.35194986170495,
+          "rawEconomicFcf": 64.27294215153162,
+          "capitalAllowance": 2.8478287163281584,
+          "otherAllowance": 7.914833536405389,
+          "adjustedFcfProxy": 53.88427989879807,
+          "economicSbcCost": 0.3739999999999952,
+          "economicFcf": 53.510279898798075
+        }
+      ]
+    }
+  },
+  "discountSensitivity": [
+    {
+      "discountRate": 9,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1996.7848275866322,
+      "pvHigh": 2161.276797599132,
+      "midpoint": 2079.0308125928823,
+      "coreGM": 69.22940097075936,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 7.138141604928492
+    },
+    {
+      "discountRate": 11,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1522.8035483912236,
+      "pvHigh": 1602.1021370230792,
+      "midpoint": 1562.4528427071514,
+      "coreGM": 69.22940097075936,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 7.138141604928492
+    },
+    {
+      "discountRate": 13,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1220.8720835408642,
+      "pvHigh": 1262.8962488310315,
+      "midpoint": 1241.8841661859478,
+      "coreGM": 69.22940097075936,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 7.138141604928492
+    }
+  ],
+  "endpointSensitivity": [
+    {
+      "targetYear": 2029,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1330.0797331081935,
+      "pvHigh": 1409.723165897829,
+      "midpoint": 1369.9014495030112,
+      "coreGM": 65.44490503519269,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 3.8910611949167078
+    },
+    {
+      "targetYear": 2030,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1317.848126939194,
+      "pvHigh": 1391.6199699454667,
+      "midpoint": 1354.7340484423303,
+      "coreGM": 66.68686595609763,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 4.860411278900731
+    },
+    {
+      "targetYear": 2031,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1386.8730843276485,
+      "pvHigh": 1460.942350717528,
+      "midpoint": 1423.9077175225882,
+      "coreGM": 67.95253355781598,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 5.938080798869965
+    },
+    {
+      "targetYear": 2032,
+      "errorCode": null,
+      "fundingShortfall": 0,
+      "firstShortfallYear": null,
+      "pvLow": 1522.8035483912236,
+      "pvHigh": 1602.1021370230792,
+      "midpoint": 1562.4528427071514,
+      "coreGM": 69.22940097075936,
+      "troughSpot": 0.61,
+      "settledSpot": 0.72,
+      "costWedgeBn": 7.138141604928492
+    }
+  ],
+  "reverseAtReference": {
+    "settledAspIndex": 0.7272908392362296,
+    "impliedTerminalGM": 69.53786558851843,
+    "impliedPriceCost": 3.2827640587886293,
+    "modeledPV": 1581.8199995202353,
+    "troughAspIndex": 0.61
+  },
+  "cashGuidanceReference": [
+    {
+      "year": 2028,
+      "referenceRevenue": 57.002399999999994,
+      "referenceBits": 1.16,
+      "coreGM": 80,
+      "operatingMargin": 75.00000000000001,
+      "rawAdjustedFcfProxy": 34.435790000000004,
+      "directCapex": 0.3,
+      "netJvFunding": 1,
+      "wcChange": 0.7862399999999994,
+      "capitalAllowance": 1.5501199999999997,
+      "otherAllowance": 4.384470000000007,
+      "totalAllowance": 5.934590000000007,
+      "adjustedFcfProxy": 28.501199999999997,
+      "economicFcf": 28.2462,
+      "economicSbcCost": 0.25499999999999545
+    },
+    {
+      "year": 2029,
+      "referenceRevenue": 66.122784,
+      "referenceBits": 1.3456,
+      "coreGM": 80,
+      "operatingMargin": 75.00000000000001,
+      "rawAdjustedFcfProxy": 39.916286400000004,
+      "directCapex": 0.35,
+      "netJvFunding": 1.2,
+      "wcChange": 0.912038400000001,
+      "capitalAllowance": 1.7561392,
+      "otherAllowance": 5.0987552000000065,
+      "totalAllowance": 6.854894400000006,
+      "adjustedFcfProxy": 33.061392,
+      "economicFcf": 32.780891999999994,
+      "economicSbcCost": 0.2805000000000035
+    },
+    {
+      "year": 2030,
+      "referenceRevenue": 76.70242943999999,
+      "referenceBits": 1.5608959999999998,
+      "coreGM": 80,
+      "operatingMargin": 75,
+      "rawAdjustedFcfProxy": 46.420376724,
+      "directCapex": 0.4,
+      "netJvFunding": 1.3,
+      "wcChange": 1.057964543999999,
+      "capitalAllowance": 2.135121472,
+      "otherAllowance": 5.934040532000006,
+      "totalAllowance": 8.069162004000006,
+      "adjustedFcfProxy": 38.351214719999994,
+      "economicFcf": 38.04521472,
+      "economicSbcCost": 0.3059999999999974
+    }
+  ]
+}

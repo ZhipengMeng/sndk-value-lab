@@ -1,0 +1,36 @@
+# SNDK Value Lab v1.5 - paths relative to this manifest
+# Explicit publishing allowlist; manifest excluded from its own hashes
+SHA256  BYTES  RELATIVE_PATH
+4f63e1bd9ec72fb74257efd3ba256449b95ab87dc863f2fb3c7f61bff224905f        644  .github/workflows/verify.yml
+1e88f1aea60e913cb87d4cb61889baee07a5fc7750b53dcdad85361fdc520cf2        186  .gitignore
+07a1720f30a65bbcc3bcfd3c4913e52363a25f2c8dd1a8e1706316886c290aa3       5896  CASH_FLOW_RECONCILIATION.md
+0677f682c6d8cf7c70fd587044d0b17be928a7b0ba73a1e2317553fe8f943a6e       1350  CHANGELOG.md
+63bd5ef06d13d47a7706573c9ccb5e04fb06afb7f3a68b392853716770205768        468  LICENSE
+10eb4cbb08cf128edb75d69293c497457c8df446ba9f5d6049386b1043d8cc2e       5717  README.md
+e1d78f451c2e45d697469a31a16ccafad9c656496c7951a02e8df7ed0dc60d62       1212  THIRD_PARTY_NOTICES.md
+2a01dd480900bd34171ed200de6ae542023a7d806db3a1a64672de4b4eb16a3c      26682  app_template.html
+8c0df7f958dcab490797616a0cedec49fac4881b5d24fafadd1b15615b6b5aab       2046  audit_export.js
+b35a6af0c7dac638b2ecc0d9a02ac91c7682be7394bd2dd3e230d35194924698       8099  audit_independent.py
+9e09eb06449343c65a2eb0838e00a2199af7c8a6b85f0003c646205617b4831d        267  audit_independent_report.json
+33ca5a0ed2e817adbc7861a31eddd85c48e5ae1c4c0eab39f8ff6a8de7accea5       1053  build_v1_5.py
+06f45a8ae54ae8dfdd15f6b6cde841dc89f4f496e9e1a69955e306937673926a       1673  generate_results.js
+6ed14e2e0de680112a58bebad571c6f06edf2ba5c4e6035843cc22b4c849f4b0      26818  guidance_preset.json
+5fcb3a0e4ef17648caefd7fb6c149592aef8220ac5b1f6fd5468d9ed16ffc502       1252  guidance_results.json
+021baec82f6ddee93213c5d282387e94542a807b66d9268c656ca9277c8232ef      19422  legacy_results.json
+15476bba9a042f2fa7781762dadcf6fe344b99c819bb2526c78021735197ec0f      24915  legacy_settings.json
+903c30cbbdfff7f7dbcaed8ea7cbb891c7913add2432b5978219e3b126cae6d5       1737  package-lock.json
+aa718182deff62f5db817ce641fcf4a12fe6647349f7679f663c97081552dd99        323  package.json
+fdce1354285c0212138db267e8b0d18cc12152769b73d5b6095eb3b622826d0f       1162  package_release.py
+e1405ddc20870e78f3cb2a394272f3e284959dfd4d2f21a98468366517234e5c       1210  release_files.py
+d693ca5a44406bf804bd57e340b946053347a8de83cd9944f964d7103e9dc146        446  release_validation.json
+ecac14c577e26e49ce7c16d9359354517a6c2e3fed4750cd3550bc883331e630       2697  run_checks.py
+14a66e55fe093d37f794e86e063ac5a366bc6ad46480da4f127ebc8d30187877      92687  sndk_valuation_v1_5.html
+3adbe785e66e0b6f81b1c5c2cab6b124ecdba46eec11f661ab0fdb1765b157d2      66009  sndk_valuation_v1_5.js
+4e203daefd5c3ca429caaf98e231b4fc28c8ab1e8f91883baac6b35df4818dba       2516  sources.json
+5a595cf5239a8001c88e27453579a4d4b97a3e7feb5a518725093d17ae0572a9      12796  test_browser.js
+57e856104dec237028f10117b813c0be7ea1e9b8a5250f8c30e740c57545802f        232  test_browser.py
+0323eac17fd49729e001553089794bc62938f508bd5e596c51cab435042ce748        676  test_browser_report.json
+0b0444eb2b7d990e807c06cec71db716c16426bb309838c2b5bef894c08fe62c      17261  test_engine.js
+377361b0b1f927cb43dcfd04272cd3b44aa2ad3a9063db65b87c4ec9bea2e0d8        699  test_engine_report.json
+5360abc5ab58ab9c8787b7cb436e0e35511fd6e40260f9af64b5de7014732285       3696  v1_4_preservation.json
+4b42be84b9643724869bb1c24ac682f9f4d0bcea2cbb050825e780091ed08cc7       1683  verify_release.py
