@@ -1,7 +1,7 @@
 {
   "status": "pass",
-  "checks": 44,
-  "appSha256": "99e519e9f7cfe1ba278a09a3244df2271f5e664afbff55841e013595613338fc",
+  "checks": 46,
+  "appSha256": "3d7d65fb53bccb388d43afaa72b7e6c73767a1ffffbe076b44e9f38325d1ab1d",
   "checksPerformed": [
     "desktop version title",
     "desktop central displayed",
@@ -9,6 +9,7 @@
     "desktop no page overflow",
     "desktop eight driver years",
     "desktop six attributed sources",
+    "desktop comparison backlink",
     "desktop no private or missing comparison links",
     "desktop section exists #audit",
     "desktop section exists #income",
@@ -31,6 +32,7 @@
     "mobile no page overflow",
     "mobile eight driver years",
     "mobile six attributed sources",
+    "mobile comparison backlink",
     "mobile no private or missing comparison links",
     "mobile section exists #audit",
     "mobile section exists #income",

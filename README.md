@@ -2,7 +2,7 @@
 
 An offline Sandisk valuation calculator with separate NAND end-market assumptions, forward earnings reconciliation, explicit joint-venture cash requirements, and a normalized terminal margin. Audited October 11, 2026; financial inputs and the reference price remain frozen as of **October 9, 2026**.
 
-**[Open the live calculator](https://zhipengmeng.github.io/sndk-value-lab/)** · [Download the standalone v2.0 app](https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v2_0.html) · [Inputs and sources](v2.0/model.json)
+**[Open the live calculator](https://zhipengmeng.github.io/sndk-value-lab/)** · [Download the standalone v2.0 app](https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v2_0.html) · [Inputs and sources](v2.0/model.json) · [Three-company comparison](https://zhipengmeng.github.io/mu-value-lab/comparison/)
 
 The live site opens v2.0. Select a scenario, adjust the assumptions, or export the displayed settings. Reload or Reset restores the original central assumptions. Exports are JSON records for reproducibility; v2.0 does not import v1.5 sessions. The [original v1.5 calculator](https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v1_5.html) remains available at its existing address, with its [original documentation](v1_5_README.md). Its economics differ materially from v2.0.
 
@@ -32,7 +32,7 @@ FY2027 modeled adjusted-style EPS is approximately $215.02 versus $214.82 consen
 
 Material assumptions include the NAND pricing cycle, end-market costs and shipment splits, future net JV funding, the composition and persistence of the cash allowance, interim cash generation, dilution, and terminal profitability. The combined $31B investment announcement is not a disclosed Sandisk net-cash schedule. FY2028–30 targets and later model outcomes are uncertain. [The v2.0 guide](v2.0/README.md) describes the calculation and verification files.
 
-This repository publishes the SNDK model only. The separate local MU/SKHY comparison and personal portfolio information are not included. Sources are linked; complete third-party filings, presentations and datasets are not redistributed here.
+This repository publishes the SNDK model only. MU and SKHY remain separate models: [MU](https://zhipengmeng.github.io/mu-value-lab/) and [SKHY](https://zhipengmeng.github.io/skhy-value-lab/). The [three-company comparison](https://zhipengmeng.github.io/mu-value-lab/comparison/) is hosted separately. Personal portfolio information is not included. Sources are linked; complete third-party filings, presentations and datasets are not redistributed here.
 
 ## Build, verify and publish
 

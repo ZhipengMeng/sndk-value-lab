@@ -19,6 +19,7 @@ async function main(){
    check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),layout+' no page overflow');
    check(await page.locator('#drivers tbody tr').count()===8,layout+' eight driver years');
    check(await page.locator('#sources a').count()===6,layout+' six attributed sources');
+   check(await page.locator('a[href="https://zhipengmeng.github.io/mu-value-lab/comparison/"]').count()===1,layout+' comparison backlink');
    const links=await page.locator('a').evaluateAll(a=>a.map(x=>x.getAttribute('href')));
    check(links.every(x=>!x.includes('MU_valuation')&&!x.includes('SKHY_valuation')&&!x.includes('/Users/')),layout+' no private or missing comparison links');
    for(const href of links.filter(x=>x.startsWith('#')))check(await page.locator(href).count()===1,layout+' section exists '+href);

@@ -1,9 +1,9 @@
 {
   "version": "2.0",
-  "checkedAt": "2026-10-11T12:17:29.659542+00:00",
+  "checkedAt": "2026-10-11T13:02:30.491936+00:00",
   "legacy": {
     "version": "1.5",
-    "checkedAt": "2026-10-11T12:17:29.659542+00:00",
+    "checkedAt": "2026-10-11T13:02:30.491936+00:00",
     "engineTestGroups": 40,
     "independentChecks": 93188,
     "arithmeticCases": 587,
@@ -13,9 +13,9 @@
     "engineSha256": "3adbe785e66e0b6f81b1c5c2cab6b124ecdba46eec11f661ab0fdb1765b157d2",
     "appSha256": "5a0630fbc2d199d46b3ac60fc24eb4b989e7521d87e4d6beff6b1b9353b4324a"
   },
-  "appSha256": "99e519e9f7cfe1ba278a09a3244df2271f5e664afbff55841e013595613338fc",
+  "appSha256": "3d7d65fb53bccb388d43afaa72b7e6c73767a1ffffbe076b44e9f38325d1ab1d",
   "browserHtmlMatches": true,
-  "browserChecks": 44,
+  "browserChecks": 46,
   "engineSha256": "e475c33d246c8da19d3c58874bd8cf4a9e14248153439559fb72b21068225100",
   "engine": {
     "status": "pass",
