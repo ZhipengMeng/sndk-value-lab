@@ -18,6 +18,20 @@ The exact envelope is **$2,412.49–$3,195.95**, displayed as approximately **$2
 
 The selected-rate valuation and the wider 11%–13% envelope are shown separately. Editing any assumptions changes the preset label to **Custom assumptions** and recalculates the results. Selecting a preset or Reset restores its saved inputs. Settings exports retain both the inputs and the selected scenario, so importing them reproduces the same view.
 
+## Operating outcomes and modeled values
+
+These selected scenarios use the **v1.4-equivalent preset**: an explicit forecast through **FY2032**, an **11% required return**, four additional years of growth slowdown, and **1.5%–2.5% terminal growth**. The figures are rounded present values per share from [legacy_results.json](legacy_results.json).
+
+| Operating outcome | Modeled value per share |
+|---|---:|
+| Moderate price-led adjustment | $2,113–$2,226 |
+| Deeper decline followed by recovery | $1,523–$1,602 |
+| Deep collapse with hypothetical contract support | $936–$985 |
+| Extreme historical-economics stress | $296–$310 |
+| Management performance continuing through FY2032 | $3,594–$3,794 |
+
+These scenarios use a longer explicit forecast and a different required return than the default FY2030 working preset above. Contract support in the collapse case is hypothetical. Extending management-reference performance through FY2032 is a model assumption; the published financial targets cover FY2028–30 average performance. No probabilities are assigned to these outcomes.
+
 ## Facts and assumptions
 
 Sandisk's published FY2028–30 **average** targets are approximately 80% non-GAAP gross margin, 75% non-GAAP operating margin, 50% adjusted free-cash-flow margin, and mid-to-high-teens revenue growth. The calculator allocates these period targets evenly to annual reference years. That allocation, 16% annual bit growth with flat selling prices, the 11%–13% required returns, and the slowdown after FY2030 are model choices.
