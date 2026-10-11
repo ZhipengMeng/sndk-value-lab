@@ -13,6 +13,10 @@ legacy_browser = json.loads((ROOT / 'test_browser_report.json').read_text())
 assert browser['status'] == 'pass'
 assert browser['appSha256'] == hashlib.sha256(data).hexdigest(), 'Run v2.0 browser tests before publishing'
 assert legacy_browser['appSha256'] == hashlib.sha256(old).hexdigest(), 'Run legacy browser tests before publishing'
+quote_report=json.loads((ROOT/'market/browser_report.json').read_text())
+assert quote_report['status']=='pass'
+for filename,digest in quote_report['htmlSha256'].items():
+ assert hashlib.sha256((ROOT/filename).read_bytes()).hexdigest()==digest,'Automatic quote browser report is stale'
 outputs = {'index.html': data, APP: data, LEGACY: old, '.nojekyll': b''}
 OUT.mkdir(exist_ok=True)
 assert not OUT.is_symlink(), 'Website directory must not be a symlink'

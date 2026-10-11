@@ -22,7 +22,9 @@ commands = [
     ['node', 'v2.0/test_engine.js'],
     [sys.executable, 'v2.0/audit_independent.py'],
 ]
+commands += [['node', 'market/test_quotes.js']]
 if args.browser:
+    commands.append(['node','market/test_browser_quotes.js'])
     commands.append([sys.executable, 'test_browser.py'])
     commands.append(['node', 'v2.0/test_browser.js'])
 commands.append([sys.executable, 'build_v1_5.py', '--check'])
@@ -72,6 +74,11 @@ report={
     'independentAudit':json.loads((ROOT / 'v2.0/verification/independent_audit.json').read_text()),
 }
 report['legacy']['version']='1.5'
+quote_path=ROOT/'market/browser_report.json'
+quote_report=json.loads(quote_path.read_text()) if quote_path.exists() else {}
+quote_matches=quote_report.get('status')=='pass' and bool(quote_report.get('htmlSha256')) and all(sha(ROOT/name)==digest for name,digest in quote_report.get('htmlSha256',{}).items())
+if args.package:assert quote_matches,'Run automatic quote browser tests against current HTML'
+report['automaticQuotes']={'browserHtmlMatches':quote_matches,'checks':quote_report.get('checks') if quote_matches else None}
 (ROOT / 'release_validation.json').write_text(json.dumps(report, indent=2) + '\n')
 print('Preservation:', preservation)
 if args.package:

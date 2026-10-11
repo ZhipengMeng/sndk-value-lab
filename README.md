@@ -1,10 +1,14 @@
 # SNDK Value Lab v2.0
 
-An offline Sandisk valuation calculator with separate NAND end-market assumptions, forward earnings reconciliation, explicit joint-venture cash requirements, and a normalized terminal margin. Audited October 11, 2026; financial inputs and the reference price remain frozen as of **October 9, 2026**.
+A standalone Sandisk valuation calculator with separate NAND end-market assumptions, forward earnings reconciliation, explicit joint-venture cash requirements, and a normalized terminal margin. Audited October 11, 2026; financial inputs and the valuation date remain frozen as of **October 9, 2026**, while online market quotes update separately.
 
 **[Open the live calculator](https://zhipengmeng.github.io/sndk-value-lab/)** · [Download the standalone v2.0 app](https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v2_0.html) · [Inputs and sources](v2.0/model.json) · [Three-company comparison](https://zhipengmeng.github.io/mu-value-lab/comparison/)
 
 The live site opens v2.0. Select a scenario, adjust the assumptions, or export the displayed settings. Reload or Reset restores the original central assumptions. Exports are JSON records for reproducibility; v2.0 does not import v1.5 sessions. The [original v1.5 calculator](https://zhipengmeng.github.io/sndk-value-lab/sndk_valuation_v1_5.html) remains available at its existing address, with its [original documentation](v1_5_README.md). Its economics differ materially from v2.0.
+
+## Automatic prices
+
+All three models and the comparison now use one dated regular-session USD quote feed. Websites check it every five minutes; the central updater runs about every 15 minutes on U.S. market weekdays. P/E, upside and rankings update while company assumptions, EPS estimates, FX and the October 9 valuation date remain unchanged. Prices are not guaranteed real-time. Turn off **Update automatically** for the original snapshot. Failed updates retain visibly dated prices. See [quote source, schedule, fallback and checks](market/README.md).
 
 ## Current model results
 
@@ -53,6 +57,6 @@ Verification establishes software and arithmetic consistency, not forecast accur
 
 ## Privacy and rights
 
-Calculations and exported settings stay in your browser. There are no analytics, accounts, automatic financial-data requests, or bundled external scripts. GitHub Pages serves the website under [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement); the standalone download works offline.
+Calculations and exported settings stay in your browser. There are no analytics or accounts. Online pages fetch only the shared public quote feed; no external script is loaded. GitHub Pages serves the website under [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement); the standalone download works offline.
 
 Copyright remains reserved; no open-source license is granted. See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The model is independent of Sandisk and is not individualized investment advice.

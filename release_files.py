@@ -21,6 +21,8 @@ PUBLISH_FILES = [
     'v2.0/verification/independent_audit.json',
 ]
 
+PUBLISH_FILES += ['market/quotes.js', 'market/quotes.css', 'market/test_quotes.js', 'market/test_browser_quotes.js', 'market/browser_report.json', 'market/README.md']
+
 def publishing_files():
     files = [ROOT / name for name in sorted(PUBLISH_FILES)]
     missing = [str(p.relative_to(ROOT)) for p in files if not p.is_file()]
